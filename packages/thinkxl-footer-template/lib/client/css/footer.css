@@ -1,0 +1,25 @@
+.footer {
+  padding-bottom: 20px;
+}
+
+.footer-navigation {
+  margin: 0 auto 4em 0;
+  display: block;
+  text-align: center;
+}
+
+.footer-navigation ul li {
+  border-right: 1px solid #ccc;
+  margin-right: 0.618em;
+  padding-right: 0.618em;
+  display: inline-block;
+}
+
+.footer-navigation ul li:last-child {
+  margin-right: 0;
+  border-right: none;
+}
+
+.blog {
+  opacity: 0.5;
+}
