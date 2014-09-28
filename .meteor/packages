@@ -69,13 +69,9 @@ thinkxl-footer-template
 thinkxl-about-template
 tkornblit:olark
 telescope-notifications
-<<<<<<< HEAD
-=======
 telescope-kadira
 
 # Accounts Templates
 service-configuration
 accounts-ui
 splendido:accounts-templates-unstyled
-
->>>>>>> b6becdab3aa84b10047206935f8ceb2fe28b9242
