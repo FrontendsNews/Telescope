@@ -8,7 +8,8 @@ Package.onUse(function (api) {
 
   api.use([
     'telescope-lib',
-    'telescope-base', 
+    'telescope-base',
+    'telescope-email',
     'aldeed:simple-schema'
   ], ['client', 'server']);
 
@@ -46,6 +47,7 @@ Package.onUse(function (api) {
   ], ['server']);
   
   api.export([
+    'Notifications',
     'createNotification',
     'buildSiteNotification',
     'newPostNotification',
