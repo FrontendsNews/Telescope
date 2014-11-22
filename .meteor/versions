@@ -111,14 +111,10 @@ telescope-theme-base@0.0.0
 telescope-theme-frontends@0.0.0
 telescope-theme-hubble@0.0.0
 telescope-update-prompt@0.1.0
-<<<<<<< HEAD
-templating@1.0.6
+templating@1.0.7
 thinkxl-about-template@0.0.0
 thinkxl-footer-template@0.0.0
 tkornblit:olark@0.9.1
-=======
-templating@1.0.7
->>>>>>> b6becdab3aa84b10047206935f8ceb2fe28b9242
 tmeasday:crypto-base@3.1.2
 tmeasday:crypto-md5@3.1.2
 tracker@1.0.2
