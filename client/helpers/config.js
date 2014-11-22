@@ -40,3 +40,8 @@ Statuses={
 	approved: 2,
 	rejected: 3
 };
+
+Avatar.options = {
+	emailHashProperty: 'email_hash',
+  defaultAvatarUrl: '/img/default-avatar.png',
+};

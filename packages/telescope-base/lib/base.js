@@ -31,7 +31,7 @@ viewNav = [
     label: 'Best'
   },
   {
-    route: 'posts_digest',
+    route: 'posts_digest_default',
     label: 'Digest'
   } 
 ];
@@ -62,7 +62,10 @@ viewParameters.best = function (terms) {
 
 viewParameters.pending = function (terms) {
   return {
-    find: {status: 1}, 
+    find: {
+      status: 1, 
+      postedAt: {$lte: null}
+    }, 
     options: {sort: {createdAt: -1}}
   };
 }

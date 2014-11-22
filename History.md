@@ -1,3 +1,34 @@
+## v0.9.9
+
+* Updating to Meteor 1.0.
+* Updating to Iron Router 1.0.
+* Adding view counter (thanks @steffenstraetz! See [PR #489](https://github.com/TelescopeJS/Telescope/pull/489))
+* Splitting out `router.js` in multiple files.
+* URL can now be removed when editing a post (thanks @massimilianomarini! See [PR 484](https://github.com/TelescopeJS/Telescope/pull/484)).
+* Now waiting on `allUsersAdmin` subscription for post submit page (thanks @kai101! See [PR 508](https://github.com/TelescopeJS/Telescope/pull/508))
+* Putting server-side routes for email template tests in their own respective packages.
+
+## v0.9.8
+
+* Fixing #457 (pending posts view not working).
+* Added German translation (thanks @Helmi!).
+* Added `?q=` parameter to searches (thanks @yourcelf!).
+* Abstracting `isAdmin` (thanks @yourcelsf!).
+* Refactoring `getPostsParameters` (thanks @delgermurun!).
+* Using `bengott:avatar` package for avatars (thanks @bengott!).
+* Upgrading to Meteor 0.9.3.1.
+
+## v0.9.7 “SettingsScope”
+
+* Updating to Meteor 0.9.3.
+* Improving RSS feed (thanks @delgermurun!).
+* Fixed redirection issues on sign-up (thanks @steffenstraetz!)
+* Fixed bug on Twitter sign-in.
+* Splitting up the settings form into sub-sections.
+* Adding help text to settings form.
+* Fixing problem with daily view theming.
+* Improving avatar stuff (thanks @shaialon and @bengott!). 
+
 ## v0.9.6
 
 * Fixed security hole in user update. 
