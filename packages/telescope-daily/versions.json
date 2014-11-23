@@ -74,7 +74,7 @@
     ],
     [
       "iron:controller",
-      "1.0.0"
+      "1.0.3"
     ],
     [
       "iron:core",
@@ -94,11 +94,11 @@
     ],
     [
       "iron:middleware-stack",
-      "1.0.0"
+      "1.0.3"
     ],
     [
       "iron:router",
-      "1.0.1"
+      "1.0.3"
     ],
     [
       "iron:url",
@@ -134,7 +134,7 @@
     ],
     [
       "meteorhacks:subs-manager",
-      "1.2.0"
+      "1.2.1"
     ],
     [
       "minifiers",
