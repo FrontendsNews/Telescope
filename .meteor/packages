@@ -35,7 +35,6 @@ mrt:mailchimp
 
 cmather:handlebars-server
 sacha:spin
-sacha:juice
 chuangbo:marked
 percolatestudio:synced-cron
 npm-container
@@ -77,4 +76,5 @@ thinkxl-about-template
 tkornblit:olark
 telescope-notifications
 kestanous:herald
+sacha:juice
 

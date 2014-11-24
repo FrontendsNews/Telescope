@@ -294,16 +294,16 @@ var migrationsList = {
     });
     return i;
   },
-  commentsToCommentCount: function () {
-    var i = 0;
-    Posts.find({commentCount: {$exists : false}}).forEach(function (post) {
-      i++;
-      console.log("Post: "+post._id);
-      Posts.update(post._id, { $rename: { 'comments': 'commentCount'}}, {multi: true, validate: false});
-      console.log("---------------------");
-    });
-    return i;
-  },
+  // commentsToCommentCount: function () {
+  //   var i = 0;
+  //   Posts.find({commentCount: {$exists : false}}).forEach(function (post) {
+  //     i++;
+  //     console.log("Post: "+post._id);
+  //     Posts.update(post._id, { $rename: { 'comments': 'commentCount'}}, {multi: true, validate: false});
+  //     console.log("---------------------");
+  //   });
+  //   return i;
+  // },
   addCommentersToPosts: function () {
     var i = 0;
     Comments.find().forEach(function (comment) {
