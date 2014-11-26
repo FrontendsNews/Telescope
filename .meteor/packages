@@ -44,6 +44,8 @@ rajit:bootstrap3-datepicker
 bengott:avatar
 jparker:gravatar
 
+tap:i18n
+
 # Telescope Packages (Required)
 
 telescope-base
@@ -78,3 +80,5 @@ telescope-notifications
 kestanous:herald
 sacha:juice
 
+# Accounts Templates
+useraccounts:unstyled

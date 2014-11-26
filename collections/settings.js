@@ -1,4 +1,12 @@
 settingsSchemaObject = {
+  title: {
+    type: String,
+    label: "Title",
+    optional: true,
+    autoform: {
+      group: 'general'
+    }
+  },
   siteUrl: {
     type: String,
     optional: true,
@@ -157,7 +165,16 @@ settingsSchemaObject = {
     optional: true,
     autoform: {
       group: 'general',
-      instructions: 'The two-letter code for the app\'s language. Defaults to "en".'
+      instructions: 'The app\'s language. Defaults to English.',
+      options: function () {
+        var languages = _.map(TAPi18n.languages_available_for_project, function (item, key) {
+          return {
+            value: key,
+            label: item[0]
+          }
+        });
+        return languages
+      }
     }
   },
   backgroundCSS: {
@@ -293,11 +310,11 @@ if (Meteor.isClient){
   var handle = query.observeChanges({
     added: function (id, fields) {
       if (fields.language)
-        T9n.setLanguage(fields.language);
+        setLanguage(fields.language)
     },
     changed: function (id, fields) {
       if (fields.language)
-        T9n.setLanguage(fields.language);
+        setLanguage(fields.language)
     }
   });
 }
