@@ -294,18 +294,6 @@ var migrationsList = {
     });
     return i;
   },
-<<<<<<< HEAD
-  // commentsToCommentCount: function () {
-  //   var i = 0;
-  //   Posts.find({commentCount: {$exists : false}}).forEach(function (post) {
-  //     i++;
-  //     console.log("Post: "+post._id);
-  //     Posts.update(post._id, { $rename: { 'comments': 'commentCount'}}, {multi: true, validate: false});
-  //     console.log("---------------------");
-  //   });
-  //   return i;
-  // },
-=======
   commentsToCommentCount: function () {
     var i = 0;
     Posts.find({comments: {$exists : true}, commentCount: {$exists : false}}).forEach(function (post) {
@@ -316,7 +304,6 @@ var migrationsList = {
     });
     return i;
   },
->>>>>>> a1645e05726de03e8083b05e5f97c5289fc48ed6
   addCommentersToPosts: function () {
     var i = 0;
     Comments.find().forEach(function (comment) {
@@ -407,10 +394,6 @@ var migrationsList = {
       console.log("---------------------");
     });
     return i;
-<<<<<<< HEAD
-   }
-};
-=======
    },
   clicksToClickCountForRealThisTime: function () { // since both fields might be co-existing, add to clickCount instead of overwriting it
     var i = 0;
@@ -423,4 +406,3 @@ var migrationsList = {
     return i;
   }
 };
->>>>>>> a1645e05726de03e8083b05e5f97c5289fc48ed6
