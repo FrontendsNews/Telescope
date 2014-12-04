@@ -34,7 +34,10 @@ addToPostSchema.push(
     propertyName: 'scheduledAt',
     propertySchema: {
       type: Date,
-      optional: true
+      optional: true,
+      autoform: {
+        omit: true
+      }
     }
   }
 );
