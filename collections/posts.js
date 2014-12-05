@@ -148,7 +148,11 @@ postSchemaObject = {
     type: Number,
     optional: true,
     autoValue: function () {
-      return getSetting('requirePostsApproval', false) ? STATUS_PENDING: STATUS_APPROVED
+      // only provide a default value
+      // 1) this is an insert operation
+      // 2) status field is not set in the document being inserted
+      if(this.isInsert && !this.isSet)
+        return getSetting('requirePostsApproval', false) ? STATUS_PENDING: STATUS_APPROVED
     },
     autoform: {
       noselect: true,
@@ -460,7 +464,7 @@ Meteor.methods({
   approvePost: function(post){
     if(isAdmin(Meteor.user())){
       var now = new Date();
-      Posts.update(post._id, {$set: {status: 2, postedAt: now}});
+      var result = Posts.update(post._id, {$set: {status: 2, postedAt: now}}, {validate: false});
     }else{
       throwError('You need to be an admin to do that.');
     }

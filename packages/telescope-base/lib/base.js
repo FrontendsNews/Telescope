@@ -4,6 +4,7 @@
 addToPostSchema = [];
 addToCommentsSchema = [];
 addToSettingsSchema = [];
+addToUserSchema = [];
 
 SimpleSchema.extendOptions({
   editable: Match.Optional(Boolean),  // editable: true means the field can be edited by the document's owner
@@ -89,7 +90,7 @@ viewParameters.pending = function (terms) {
   return {
     find: {
       status: 1, 
-      postedAt: {$lte: null}
+      postedAt: {$lte: new Date("December 31, 2999")} // for pending view, show future posts too
     }, 
     options: {sort: {createdAt: -1}}
   };
@@ -155,12 +156,16 @@ postHeading = [
     template: 'postDomain', 
     order: 5
   }
-]
+];
 
 postMeta = [
   {
-    template: 'postInfo',
+    template: 'postAuthor',
     order: 1
+  },
+  {
+    template: 'postInfo',
+    order: 2
   },
   {
     template: 'postCommentsLink',
@@ -192,6 +197,16 @@ commentEditRenderedCallbacks = [];
 commentEditClientCallbacks = [];
 commentEditMethodCallbacks = []; // not used yet
 commentAfterEditMethodCallbacks = []; // not used yet
+
+userEditRenderedCallbacks = [];
+userEditClientCallbacks = [];
+
+userProfileCompleteChecks = [
+  function(user) {
+    return !!getEmail(user) && !!user.username;
+  }
+];
+
 
 // ------------------------------ Dynamic Templates ------------------------------ //
 
