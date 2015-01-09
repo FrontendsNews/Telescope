@@ -79,12 +79,10 @@ telescope-update-prompt
 telescope-kadira
 
 # Think packages
-telescope-theme-frontends
 thinkxl-footer-template
 thinkxl-about-template
 
 tkornblit:olark
-telescope-notifications
 kestanous:herald
 sacha:juice
 telescope-notifications
