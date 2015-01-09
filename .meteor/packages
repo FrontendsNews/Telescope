@@ -16,6 +16,7 @@ accounts-facebook
 service-configuration
 accounts-ui
 reactive-var
+http
 
 # Atmosphere Packages
 
@@ -25,15 +26,15 @@ meteorhacks:fast-render
 meteorhacks:subs-manager
 meteorhacks:npm
 
-aldeed:autoform@4.0.0-rc1
+aldeed:autoform
 aldeed:collection2
 aldeed:simple-schema
 
 mrt:jquery-hotkeys
 mrt:cookies
-mrt:moment
 mrt:mailchimp
 
+ccan:cssreset # CSS reset (Must come before any other css)
 cmather:handlebars-server
 sacha:spin
 chuangbo:marked
@@ -45,8 +46,14 @@ rajit:bootstrap3-datepicker
 bengott:avatar
 jparker:gravatar
 tap:i18n
-# CSS reset (Must come before any other css)
-ccan:cssreset
+useraccounts:unstyled@1.4.0
+tsega:bootstrap3-datetimepicker@3.1.3_1
+momentjs:moment
+
+# Testing
+
+# sanjo:jasmine
+# velocity:html-reporter
 
 # Telescope Packages (Required)
 
@@ -56,6 +63,7 @@ telescope-i18n
 
 # Telescope Packages (Optional)
 
+telescope-datetimepicker
 telescope-theme-base
 telescope-module-share
 telescope-api
@@ -82,8 +90,6 @@ sacha:juice
 telescope-notifications
 telescope-singleday
 telescope-invites
-
-# Accounts Templates
-useraccounts:unstyled
-telescope-datetimepicker
-tsega:bootstrap3-datetimepicker@3.1.3_1
+telescope-post-by-feed
+telescope-releases
+telescope-getting-started

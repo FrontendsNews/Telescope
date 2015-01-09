@@ -19,7 +19,8 @@ Package.onUse(function (api) {
     'iron:router',                // routing package
     'telescope-base',             // basic Telescope hooks and objects
     'telescope-lib',              // useful functions
-    'telescope-i18n'              // internationalization wrapper
+    'telescope-i18n',             // internationalization wrapper
+    'fourseven:scss'              // SCSS compilation package
   ]);
 
   // client
@@ -47,36 +48,39 @@ Package.onUse(function (api) {
   // both
 
   api.add_files([
-    'lib/both.js'
+    'lib/custom_fields.js',
+    'lib/hooks.js',
+    'lib/main.js',
+    'lib/routes.js',
+    'lib/settings.js',
+    'lib/templates.js'
   ], ['client', 'server']);
 
   // client
 
   api.add_files([
-    'lib/client/client_only.js'
+    'lib/client/templates/custom_template.html',
+    'lib/client/templates/custom_template.js',
+    'lib/client/templates/customPostTitle.html',
+    'lib/client/scss/custom.scss'
   ], ['client']);
 
   // server
 
   api.add_files([
-    'lib/server/server_only.js'
+    'lib/server/publications.js'
   ], ['server']);    
 
   // i18n languages (must come last)
 
   api.add_files([
-    'i18n/de.i18n.json',
     'i18n/en.i18n.json',
-    'i18n/es.i18n.json',
-    'i18n/fr.i18n.json',
-    'i18n/it.i18n.json',
-    'i18n/zh-CN.i18n.json'
   ], ['client', 'server']);
 
   // -------------------------------- 3. Variables to export --------------------------------
 
   api.export([
-    //
+    'myFunction'
   ]);
 
 });

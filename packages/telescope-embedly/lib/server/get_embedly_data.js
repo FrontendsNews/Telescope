@@ -5,9 +5,12 @@ getEmbedlyData = function (url) {
   var thumbnailWidth = getSetting('thumbnailWidth', 200);
   var thumbnailHeight = getSetting('thumbnailHeight', 125);
 
-  if(!embedlyKey)
-    throw new Meteor.Error("Couldn't find an Embedly API key! Please add it to your Telescope settings.")  
-  
+  if(!embedlyKey) {
+    // fail silently to still let the post be submitted as usual
+    console.log("Couldn't find an Embedly API key! Please add it to your Telescope settings or remove the Embedly module.");
+    return null;
+  }
+
   try {
     
     var result = Meteor.http.get(extractBase, {
@@ -42,19 +45,54 @@ Meteor.methods({
   },
   getEmbedlyData: function (url) {
     return getEmbedlyData(url);
+  },
+  embedlyKeyExists: function () {
+    return !!getSetting('embedlyKey');
   }
 });
 
-// For security reason, we use a separate server-side API call to set the media object
-var addMediaOnSubmit = function (post) {
+// For security reason, we use a separate server-side API call to set the media object,
+// and the thumbnail object if it hasn't already been set
+
+// note: the following function is not used because it would hold up the post submission, use next one instead
+// var addMediaOnSubmit = function (post) {
+//   if(post.url){
+//     var data = getEmbedlyData(post.url);
+//     if (!!data) {
+//       // only add a thumbnailUrl if there isn't one already
+//       if(!post.thumbnailUrl && !!data.thumbnailUrl)
+//         post.thumbnailUrl = data.thumbnailUrl
+//       // add media if necessary
+//       if(!!data.media.html)
+//         post.media = data.media
+//     }
+//   }
+//   return post;
+// }
+// postSubmitMethodCallbacks.push(addMediaOnSubmit);
+
+// Async variant that directly modifies the post object with update()
+var addMediaAfterSubmit = function (post) {
+  var set = {};
   if(post.url){
     var data = getEmbedlyData(post.url);
-    if(!!data && !!data.media.html)
-      post.media = data.media
+    if (!!data) {
+      // only add a thumbnailUrl if there isn't one already
+      if (!post.thumbnailUrl && !!data.thumbnailUrl) {
+        post.thumbnailUrl = data.thumbnailUrl;
+        set.thumbnailUrl = data.thumbnailUrl;
+      }
+      // add media if necessary
+      if (!!data.media.html) {
+        post.media = data.media;
+        set.media = data.media;
+      }
+    }
   }
+  Posts.update(post._id, {$set: set});
   return post;
 }
-postSubmitMethodCallbacks.push(addMediaOnSubmit);
+postAfterSubmitMethodCallbacks.push(addMediaAfterSubmit);
 
 // TODO: find a way to only do this is URL has actually changed?
 var updateMediaOnEdit = function (updateObject) {
