@@ -2,9 +2,10 @@ var thumbnailProperty = {
   propertyName: 'thumbnailUrl',
   propertySchema: {
     type: String,
-    optional: true,
     label: 'thumbnail',
+    optional: true,
     autoform: {
+      editable: true,
       type: 'bootstrap-postthumbnail'
     }
   }
@@ -26,9 +27,9 @@ var mediaProperty = {
 addToPostSchema.push(mediaProperty);
 
 
-postModules.push({
+postThumbnail.push({
   template: 'postThumbnail', 
-  position: 'center-left'
+  order: 15
 });
 
 var embedlyKeyProperty = {

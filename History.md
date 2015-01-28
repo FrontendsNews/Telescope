@@ -1,3 +1,57 @@
+## v0.12.0 “DummyScope”
+
+**Important: existing newsletters and feeds need to be manually enabled in the Settings panel** 
+
+* Added "Enable Newsletter" setting. Note: existing newsletters must be re-enabled. 
+* Added "Enable Feeds" settings. Note: existing feeds must be re-enabled.
+* Now showing release notes for latest version right inside the app.
+* Added dummy posts, users, and comments.
+* Added new Events collection for keeping track of important events.
+* Log first run event.
+* `MAIL_URL` environment variable can now be set from Settings.
+* Renamed `viewNav` to `viewsMenu`.
+* Renamed `adminNav` to `adminMenu`.
+* Improvements to the Post by Feed package.
+* Added tests for nav bar (thanks @anthonymayer!).
+* **New and improved [documentation](http://telesc.pe/docs).**
+
+## v0.11.1 “FeedScope”
+
+* Post submit and edit forms now submit to their respective methods directly.
+* Removed `postSubmitRenderedCallbacks` and `postEditRenderedCallbacks`.
+* `telescope-post-by-feed` package now lets you import posts from RSS feeds.
+* Adding limit of 200 posts to post list request.
+* Refactoring post and comment submit to fix latency compensation issues.
+* Tags package now using Autoform. 
+
+## v0.11.0 “AvatarScope”
+
+* Added new `userCreatedCallbacks` callback hook.
+* Added new setting to subscribe new user to mailing list automatically.
+* Added new `debug` setting. 
+* `siteUrl` setting now affects `Meteor.absoluteUrl()`.
+* Added new `clog` function that only logs if `debug` setting is true.
+* Simplified post module system, modules are not split in three zones anymore.
+* Added new `postThumbnail` hook to show Embedly thumbnail. 
+* Simplified Hubble theme CSS for both desktop and mobile.
+* Many CSS tweaks for Hubble mobile. 
+* Show author and commenters avatars on post item.
+* Adding description to post list pages and showing them in menus. 
+* Improved Russian translation (thanks @Viktorminator!).
+* Now using `editorconfig` (thanks @erasaur!).
+* Upgraded to `useraccounts:unstyled@1.4.0` (thanks @splendido!).
+
+## v0.10.0 “RefactorScope”
+
+* Renaming Errors to Messages (thanks @yourcelf!).
+* Adding `fast-render` (thanks @arunoda!).
+* Extracted digest into its own package.
+* Adding "scheduled" view that shows upcoming scheduled posts.
+* Bringing back "delete post" link that was removed by mistake.
+* Made user profile display page modular.
+* Made user profile edit page modular.
+* Started extracting invites into their own package.
+
 ## v0.9.11 “FormScope”
 
 * Now using [Autoform](https://github.com/aldeed/meteor-autoform/)'s **quickform** feature to generate post submit and edit forms. 
