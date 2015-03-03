@@ -9,7 +9,6 @@
 }
 
 .footer-navigation ul li {
-  border-right: 1px solid #ccc;
   margin-right: 0.618em;
   padding-right: 0.618em;
   display: inline-block;
@@ -19,6 +18,20 @@
   margin-right: 0;
   border-right: none;
 }
+
+.social-icon a {
+  font-size: 2em;
+}
+
+.fa-facebook-square { color: #3b5998;  }
+.fa-twitter-square { color: #55acee;  }
+.fa-google-plus-square { color: #dd4b39;  }
+.fa-linkedin-square { color: #0976b4;  }
+.fa-pinterest-square { color: #cc2127;  }
+.fa-youtube-square { color: #b31217;  }
+.fa-instagram { color: #3f729b;  }
+.fa-rss-square { color: #F58732; }
+.fa-envelope-square { color: #777; }
 
 .blog {
   opacity: 0.5;
@@ -32,29 +45,4 @@
 .footer-twitter-follow-button {
   margin: 0 auto 4em auto;
   text-align: center;
-}
-
-/* This gets Google to fall into place */
-.social {
-    font-size: 1px;
-
-}
- 
-/* This gets Facebook to fall into place */
-.social iframe {
-    vertical-align: middle;
-
-}
- 
-/* Set an optional width for your button wrappers */
-.social span {
-    display: inline-block;
-      width: 110px;
-
-}
- 
-/* Adjust the widths individually if you like */
-.social .google {
-    width: 75px;
-
 }

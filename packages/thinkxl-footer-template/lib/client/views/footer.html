@@ -1,27 +1,20 @@
 <template name="customFooter">
   <nav class="footer-navigation">
     <ul>
-      <li><a href="/about">About</a></li>
-      <li><a href="http://feeds.feedburner.com/Frontends" target="_blank">RSS</a></li>
-      <li><a href="mailto:thinkxl@frontends.org">Contact</a></li>
-      <li><a href="http://rocketb.in">Rocketbin</a></li>
+      <li><a href="/about">About Frontends</a></li>
+      <li>&bullet;</li>
+      <li><a href="http://rocketb.in">Share code with Rocketbin!</a></li>
     </ul>
   </nav>
 
-  <p class="footer-social-share">
-    <div class="social">
-      <span class="twitter">
-        <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://frontends.org">Tweet</a>
-      </span>
-      <span class="google">
-        <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-        <g:plusone size="medium" href="http://frontends.org"></g:plusone>
-      </span>
-      <span class="Facebook">
-        <iframe src="https://www.facebook.com/plugins/like.php?href=http://frontends.org&amp;show_faces=false&amp;layout=button_count" scrolling="no" frameborder="0" style="height: 21px; width: 100px" allowTransparency="true"></iframe>
-      </span>
-    </div>
-  </p>
+  <nav class="social-icons footer-navigation">
+    <ul>
+      <li class="social-icon"><a href="http://facebook.com/frontends.org"><i class="fa fa-facebook-square"></i> </a></li>
+      <li class="social-icon"><a href="https://plus.google.com/+FrontendsOrgnews/posts"><i class="fa fa-google-plus-square"></i> </a></li>
+      <li class="social-icon"><a href="http://feeds.feedburner.com/Frontends"><i class="fa fa-rss-square"></i> </a></li>
+      <li class="social-icon"><a href="mailto:thinkxl@frontends.org"><i class="fa fa-envelope-square"></i></a></li>
+    </ul>
+  </nav>
 
   <p class="footer-twitter-follow-button"><a href="https://twitter.com/frontendsnews" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @frontendsnews</a>
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></p>
