@@ -1,6 +1,6 @@
 .inner-page {
   margin: 0 auto;
-  max-width: 35em;
+  max-width: 55em;
 }
 
 .inner-page h1,
@@ -21,11 +21,17 @@
 .inner-page h1 {
   margin-top: 0.218em;
   margin-bottom: 0.618em;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.inner-page h2 {
   font-size: 1.618em;
   font-weight: bold;
 }
 
 .inner-page h3 {
+  font-size: 1.25em;
   margin-top: 1em;
   margin-bottom: 1em;
 }
