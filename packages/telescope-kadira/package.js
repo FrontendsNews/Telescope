@@ -7,15 +7,15 @@ Package.describe({
 Package.onUse(function (api) {
 
   api.use([
+    'templating',
     'telescope-lib', 
-    'telescope-base'
+    'telescope-base',
+    'tap:i18n',
+    'meteorhacks:kadira@2.17.2'
   ], ['client', 'server']);
 
-  api.use([
-    'meteorhacks:kadira@2.14.0'
-  ], ['server']);
-
   api.add_files([
+    'package-tap.i18n',
     'lib/kadira-settings.js'
   ], ['client', 'server']);
 
