@@ -3,7 +3,7 @@
 }
 
 .footer-navigation {
-  margin: 0 auto 1em 0;
+  margin: 0 auto 0 0;
   display: block;
   text-align: center;
 }
@@ -12,6 +12,10 @@
   margin-right: 0.618em;
   padding-right: 0.618em;
   display: inline-block;
+}
+
+.footer-nav-el {
+  border-right: 1px solid #ccc;
 }
 
 .footer-navigation ul li:last-child {
@@ -39,7 +43,7 @@
 
 .footer-social-share {
   text-align: center;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 .footer-twitter-follow-button {
