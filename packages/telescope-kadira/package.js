@@ -8,10 +8,11 @@ Package.onUse(function (api) {
 
   api.use([
     'templating',
-    'telescope-lib', 
+    'telescope-lib',
     'telescope-base',
+    'telescope-settings',
     'tap:i18n',
-    'meteorhacks:kadira@2.17.2'
+    'meteorhacks:kadira@2.20.1'
   ], ['client', 'server']);
 
   api.add_files([
@@ -23,4 +24,7 @@ Package.onUse(function (api) {
     'lib/server/kadira.js'
   ], ['server']);
 
+  api.add_files([
+    "i18n/en.i18n.json"
+  ], ["client", "server"]);
 });
